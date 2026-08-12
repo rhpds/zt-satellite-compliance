@@ -42,7 +42,7 @@ cp cvemap.xml /var/lib/foreman/
 ssh root@rhel1.lab "insights-client"
 
 # Download the tailoring file.
-#wget https://github.com/rhpds/zt-satellite-compliance/blob/main/rhel10-stig-sshd-tailoring.xml
+wget -O /tmp/rhel10-stig-sshd-tailoring.xml https://raw.githubusercontent.com/rhpds/zt-satellite-compliance/main/rhel10-stig-sshd-tailoring.xml
 
 # Import the openscap ansible role.
 hammer ansible roles import --proxy-id 1 --role-names theforeman.foreman_scap_client
