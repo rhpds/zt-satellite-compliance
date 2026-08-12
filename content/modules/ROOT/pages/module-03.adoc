@@ -4,7 +4,12 @@ OpenSCAP compliance scanning requires a content view that includes the `Red Hat 
 
 The `Red Hat Satellite Client 6 for RHEL 10` repository contains the OpenSCAP client required to run compliance scans.
 
-Let's create a content view.
+Let's create a content view. We'll start by switching to the `Satellite Web UI`.
+
+.Satellite Web UI
+image::satellite-web-ui.png[]
+
+Let's create a new content view called `RHEL10` that includes the required repositories.
 
 .Create a content view
 [%collapsible]
@@ -17,7 +22,7 @@ image::create-cv.png[]
 In the **Create Content View** form, enter the following information:
 
 . Enter the name `RHEL10` in the **Name** field.
-. Enter the label `RHEL10` in the **Label** field.
+. Check that the label `RHEL10` in populated in the **Label** field.
 . Select `Content view` in the **Type** field.
 . Click `Create content view`.
 

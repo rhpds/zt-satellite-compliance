@@ -40,3 +40,6 @@ cp cvemap.xml /var/lib/foreman/
 
 # Refresh Red Hat Lightspeed
 ssh root@rhel1.lab "insights-client"
+
+# Download the tailoring file.
+wget https://github.com/rhpds/zt-satellite-compliance/blob/main/rhel10-stig-sshd-tailoring.xml
