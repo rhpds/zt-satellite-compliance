@@ -1,0 +1,33 @@
+:imagesdir: ../assets/images
+
+= Create an activation key to provide access to the required content view
+
+In this module, you will create an activation key to provide access to the content view that includes the required repositories for OpenSCAP compliance scanning completed in the previous module.
+
+.Create an activation key
+[%collapsible]
+====
+Navigate to **Content > Lifecycle > Activation Keys** in the Satellite Web UI and click **Create Activation Key**.
+
+.Activation key menu
+image::activation-keys-menu.png[]
+
+In the `New Activation Key` form, enter the following information:
+
+. Enter the name `RHEL10` in the **Name** field.
+. Click on `Assign content view environments`.
+
+.Activation key form
+image::new-activation-key.png[]
+
+In the `Assign content view environments` form, select the following:
+
+. Select `RHEL10` in the **Content view** field.
+. Click `Save`
+
+.Assign content view environments form
+image::assign-cv.png[]
+
+Click **Save** to create the activation key.
+
+====
