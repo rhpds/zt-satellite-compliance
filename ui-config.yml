@@ -7,11 +7,14 @@ antora:
     - name: module-01
       label: "Introduction"
       solveButton: false
+    - name: module-02
+      label: "OpenSCAP Compliance Scanning"
+      solveButton: false
 
 tabs:
   - name: "Satellite Web UI"
     url: https://satellite-${guid}.${domain}/
-    external: true
+    external: false
   - name: "satellite.lab terminal"
     url: /wetty_satellite/ssh/root
   - name: "rhel1.lab terminal"

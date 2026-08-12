@@ -1,0 +1,78 @@
+:imagesdir: ../assets/images
+
+= OpenSCAP Compliance Scanning
+
+In this module you will use Red Hat Satellite to run an OpenSCAP compliance scan against *rhel1.lab* and review the results.
+
+== What is OpenSCAP?
+
+OpenSCAP is an open-source framework for managing system security compliance. It uses the Security Content Automation Protocol (SCAP) to evaluate systems against security policies and benchmarks such as CIS, DISA STIG, and PCI-DSS.
+
+Red Hat Satellite integrates with OpenSCAP so you can:
+
+- Assign compliance policies to hosts
+- Schedule and run scans remotely
+- View compliance reports in the Satellite Web UI
+
+== Assign an OpenSCAP Policy
+
+First, we need to create a compliance policy and assign it to *rhel1.lab*.
+
+In the Satellite Web UI, navigate to *Hosts > Compliance > Policies*.
+
+Click *Create Policy*.
+
+Fill in the following:
+
+- *Name*: `RHEL 10 CIS`
+- *SCAP Content*: Select the RHEL 10 SCAP content
+- *XCCDF Profile*: Select the CIS profile
+- *Period*: `Weekly`
+- *Weekday*: `Monday`
+
+Click *Next* through the remaining steps and assign the policy to *rhel1.lab*.
+
+Click *Submit* to save the policy.
+
+== Run a Compliance Scan
+
+Now let's run the scan immediately rather than waiting for the scheduled time.
+
+Navigate to *Hosts > All Hosts* and click on *rhel1.lab*.
+
+Click *Schedule Remote Job* from the host actions menu.
+
+Select *Run OpenSCAP scan* as the job template.
+
+Click *Submit* to start the scan.
+
+[NOTE]
+====
+The scan may take a few minutes to complete. You can monitor the job status on the *Monitor > Jobs* page.
+====
+
+== Review Compliance Results
+
+Once the scan completes, navigate to *Hosts > Compliance > Reports*.
+
+Click on the most recent report for *rhel1.lab*.
+
+You will see a summary showing:
+
+- The number of rules that *passed*
+- The number of rules that *failed*
+- The number of rules that were *not applicable*
+
+[TIP]
+====
+Click on any failed rule to see details about what the rule checks and how to remediate the finding.
+====
+
+== Summary
+
+In this module you:
+
+- Created an OpenSCAP compliance policy in Satellite
+- Assigned the policy to a managed host
+- Ran a compliance scan remotely
+- Reviewed the compliance report in the Satellite Web UI

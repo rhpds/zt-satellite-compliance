@@ -1,6 +1,6 @@
 :imagesdir: ../assets/images
 
-== Introduction to Red Hat Satellite 6.19 Basics
+== Introduction to Red Hat Satellite 6.19 Compliance
 
 The lab environment consists of the following
 
@@ -8,7 +8,7 @@ The lab environment consists of the following
 - Red Hat Enterprise Linux hosts.
 
 .Lab topology
-image::satellite-basics-environment.png[../assets/satellite-basics-environment]
+image::satellite-compliance-environment.png[../assets/satellite-compliance-environment]
 
 == Log into the Web UI
 
@@ -25,12 +25,12 @@ You’ll need the following credentials to log into the Satellite Web UI.
 
 You can copy and paste each of them below.
 
-[source,js]
+[source,text]
 ----
 admin
 ----
 
-[source,js]
+[source,text]
 ----
 bc31c9a6-9ff0-11ec-9587-00155d1b0702
 ----
