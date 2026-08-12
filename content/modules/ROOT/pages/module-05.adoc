@@ -1,0 +1,10 @@
+:imagesdir: ../assets/images
+
+= Configure a host group
+
+Navigate to **Configure > Host Groups ** and click on `Create Host Group`.
+
+.Create host group menu
+image::host-groups.png[]
+
+

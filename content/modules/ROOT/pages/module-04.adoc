@@ -4,9 +4,8 @@
 
 In this module, you will create an activation key to provide access to the content view that includes the required repositories for OpenSCAP compliance scanning completed in the previous module.
 
-.Create an activation key
-[%collapsible]
-====
+== Create an activation key
+
 Navigate to **Content > Lifecycle > Activation Keys** in the Satellite Web UI and click **Create Activation Key**.
 
 .Activation key menu
@@ -30,4 +29,3 @@ image::assign-cv.png[]
 
 Click **Save** to create the activation key.
 
-====

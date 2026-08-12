@@ -16,6 +16,9 @@ antora:
     - name: module-04
       label: "Module 04"
       solveButton: false
+    - name: module-05
+      label: "Module 05"
+      solveButton: false
 
 tabs:
   - name: "Satellite Web UI"
