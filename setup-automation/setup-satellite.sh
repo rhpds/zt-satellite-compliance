@@ -46,3 +46,8 @@ wget -O /tmp/rhel10-stig-sshd-tailoring.xml https://raw.githubusercontent.com/rh
 
 # Import the openscap ansible role.
 hammer ansible roles import --proxy-id 1 --role-names theforeman.foreman_scap_client
+
+# Delete activation key RHEL10 if it exists.
+if hammer activation-key list --organization "Acme Org" | grep -q "RHEL10"; then
+  hammer activation-key delete --name "RHEL10" --organization "Acme Org"
+fi
