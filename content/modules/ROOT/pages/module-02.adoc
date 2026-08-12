@@ -1,6 +1,6 @@
 :imagesdir: ../assets/images
 
-= OpenSCAP Compliance Scanning
+= OpenSCAP Compliance Introduction
 
 In this module you will use Red Hat Satellite to run an OpenSCAP compliance scan against *rhel1.lab* and review the results.
 
@@ -13,66 +13,33 @@ Red Hat Satellite integrates with OpenSCAP so you can:
 - Assign compliance policies to hosts
 - Schedule and run scans remotely
 - View compliance reports in the Satellite Web UI
+- Apply remediation to fix compliance violations
 
-== Assign an OpenSCAP Policy
+In Satellite, you use an XCCDF profile from SCAP content and, eventually, a tailoring file, to define a compliance policy. Satellite includes default SCAP contents from SCAP Security Guide provided by the OpenSCAP project.
 
-First, we need to create a compliance policy and assign it to *rhel1.lab*.
+SCAP content is a SCAP data-stream file that contains implementation of compliance, configuration, or security baselines. A single data stream usually includes multiple XCCDF profiles. An XCCDF profile defines an industry standard or custom security standard against which you can evaluate compliance of host configuration in Satellite, such as Protection Profile for General Purpose Operating Systems (OSPP), Health Insurance Portability and Accountability Act (HIPAA), and PCI-DSS v3.2.1 Control Baseline for Red Hat Enterprise Linux 9. You can adapt existing XCCDF profiles according to your requirements by using tailoring files.
 
-In the Satellite Web UI, navigate to *Hosts > Compliance > Policies*.
+Satellite supports content of SCAP versions 1.2 and 1.3.
 
-Click *Create Policy*.
+== Upload the OpenSCAP Content
 
-Fill in the following:
+The first step to configuring OpenSCAP compliance scanning is to upload the OpenSCAP content to Red Hat Satellite. The content includes the security policies and benchmarks that will be used to evaluate your systems. By loading the default SCAP contents on Satellite Server, you ensure that the data streams from the SCAP Security Guide (SSG) are loaded and assigned to all organizations and locations.
 
-- *Name*: `RHEL 10 CIS`
-- *SCAP Content*: Select the RHEL 10 SCAP content
-- *XCCDF Profile*: Select the CIS profile
-- *Period*: `Weekly`
-- *Weekday*: `Monday`
+SSG is provided by the operating system of Satellite Server and installed in /usr/share/xml/scap/ssg/content/.
 
-Click *Next* through the remaining steps and assign the policy to *rhel1.lab*.
+In the `satellite.lab terminal`, run the following command to upload the default SCAP contents to Satellite Server:
 
-Click *Submit* to save the policy.
+[source,bash,run]
+----
+hammer scap-content bulk-upload --type default
+----
 
-== Run a Compliance Scan
+The output should look like the following:
 
-Now let's run the scan immediately rather than waiting for the scheduled time.
+.SCAP content upload output
+image::upload-scap-contents-cli.png[]
 
-Navigate to *Hosts > All Hosts* and click on *rhel1.lab*.
+In the `Satellite Web UI`, navigate to **Hosts > Compliance >SCAP contents** to verify that the SCAP contents have been uploaded successfully.
 
-Click *Schedule Remote Job* from the host actions menu.
-
-Select *Run OpenSCAP scan* as the job template.
-
-Click *Submit* to start the scan.
-
-[NOTE]
-====
-The scan may take a few minutes to complete. You can monitor the job status on the *Monitor > Jobs* page.
-====
-
-== Review Compliance Results
-
-Once the scan completes, navigate to *Hosts > Compliance > Reports*.
-
-Click on the most recent report for *rhel1.lab*.
-
-You will see a summary showing:
-
-- The number of rules that *passed*
-- The number of rules that *failed*
-- The number of rules that were *not applicable*
-
-[TIP]
-====
-Click on any failed rule to see details about what the rule checks and how to remediate the finding.
-====
-
-== Summary
-
-In this module you:
-
-- Created an OpenSCAP compliance policy in Satellite
-- Assigned the policy to a managed host
-- Ran a compliance scan remotely
-- Reviewed the compliance report in the Satellite Web UI
+.SCAP contents in Satellite Web UI
+image::webgui-scap-contents.png[]
