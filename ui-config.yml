@@ -10,6 +10,9 @@ antora:
     - name: module-02
       label: "OpenSCAP Compliance Scanning"
       solveButton: false
+    - name: module-03
+      label: "Module 03"
+      solveButton: false
 
 tabs:
   - name: "Satellite Web UI"

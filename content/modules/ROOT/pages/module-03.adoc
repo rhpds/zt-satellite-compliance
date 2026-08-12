@@ -1,0 +1,64 @@
+:imagesdir: ../assets/images
+
+OpenSCAP compliance scanning requires a content view that includes the `Red Hat Satellite Client 6 for RHEL 10` repository. In this lab, all the required repositories have been synchronized. Please refer to documentation or try the Satellite Basics lab to learn how to synchronize repositories.
+
+The `Red Hat Satellite Client 6 for RHEL 10` repository contains the OpenSCAP client required to run compliance scans.
+
+Let's create a content view.
+
+.Create a content view
+[%collapsible]
+====
+Navigate to **Content > Lifecycle > Content Views** in the Satellite Web UI and click **Create Content View**.
+
+.Create Content View
+image::create-cv.png[]
+
+In the **Create Content View** form, enter the following information:
+
+. Enter the name `RHEL10` in the **Name** field.
+. Enter the label `RHEL10` in the **Label** field.
+. Select `Content view` in the **Type** field.
+. Click `Create content view`.
+
+.Create Content View form
+image::create-cv-wizard.png[]
+
+====
+
+After creating the content view, you'll be taken to `Repositories` menu where we'll add repositories.
+
+.Add repositories to the content view
+[%collapsible]
+====
+Click on the `Status` dropdown.
+
+.Status dropdown
+image::repositories.png[]
+
+Select `All`.
+
+.Select all
+image::repositories-dropdown-all.png[]
+
+Complete the following steps:
+
+. Add the following repositories to the content view:
+  * `Red Hat Enterprise Linux 10 for x86_64 - BaseOS (RPMs)`
+  * `Red Hat Enterprise Linux 10 for x86_64 - AppStream (RPMs)`
+  * `Red Hat Satellite Client 6 for RHEL 10 (RPMs)`
+. Click **Add repositories**.
+
+Now click on `Publish new version` to publish the content view.
+
+.Publish new version
+image::publish-cv.png[]
+
+Complete the following steps:
+
+. Click on `Promote`.
+. Click `Next`
+
+Finally click `Finish` to promote the content view to the `Library` lifecycle environment.
+
+====
