@@ -1,0 +1,46 @@
+:imagesdir: ../assets/images
+
+== Introduction to Red Hat Satellite 6.19 Basics
+
+The lab environment consists of the following
+
+- Red Hat Satellite 6.19.0 Server (Satellite is preinstalled and content/software is synchronized.)
+- Red Hat Enterprise Linux hosts.
+
+.Lab topology
+image::satellite-basics-environment.png[../assets/satellite-basics-environment]
+
+== Log into the Web UI
+
+First, we’ll log into the Red Hat Satellite Web User Interface (UI).
+Satellite has been preinstalled and installation is out of scope for
+this lab.
+
+Click on the tab labelled Satellite Web UI as shown in the image below.
+
+.Satellite Web UI tab
+image::satellite-webui-tab.png[../assets/satellite-webui-tab]
+
+You’ll need the following credentials to log into the Satellite Web UI.
+
+You can copy and paste each of them below.
+
+[source,js]
+----
+admin
+----
+
+[source,js]
+----
+bc31c9a6-9ff0-11ec-9587-00155d1b0702
+----
+
+Now click `+Log In+`.
+
+.Login menu
+image::webuilogin.png[../assets/webuilogin]
+
+You will be taken to the main dashboard.
+
+.Satellite WebGUI dashboard
+image::dashboard.png[../assets/dashboard]

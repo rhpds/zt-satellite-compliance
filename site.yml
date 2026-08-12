@@ -1,0 +1,21 @@
+---
+site:
+  title: "Red Hat Satellite Compliance"
+  url: https://github.com/rhpds/showroom_template_zero
+  start_page: modules::module-01.adoc
+
+content:
+  sources:
+    - url: ./
+      start_path: content
+
+ui:
+  bundle:
+    url: https://github.com/rhpds/nookbag-bundle/releases/download/v0.0.3/ui-bundle.zip
+    snapshot: true
+
+output:
+  dir: ./www/www
+
+runtime:
+  cache_dir: ./.cache/antora

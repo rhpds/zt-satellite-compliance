@@ -1,0 +1,99 @@
+---
+litemaas:
+  models:
+    - minimax-m2
+  duration: 1d
+  enable_user_info_messages: true
+  enable_user_info_data: true
+
+virtualmachines:
+  - name: "satellite"
+    image: "satellite-server-rhdp-1-6-19-04-09-26-v2"
+    bootloader: efi
+    register_satellite: false
+    memory: "32G"
+    cores: 8
+    image_size: "540Gi"
+    tags:
+      - key: "AnsibleGroup"
+        value: "bastions"
+    networks:
+      - default
+    userdata: |
+      #cloud-config
+      fqdn: satellite.lab
+      hostname: satellite
+      prefer_fqdn_over_hostname: true
+      manage_etc_hosts: true
+    services:
+      - name: satellite-https
+        ports:
+          - port: 443
+            protocol: TCP
+            targetPort: 443
+            name: satellite-https
+    routes:
+      - name: satellite-https
+        host: satellite
+        service: satellite-https
+        targetPort: 443
+        tls: true
+        tls_termination: reencrypt
+        tls_destinationCACertificate: |
+          -----BEGIN CERTIFICATE-----
+          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
+          U1n7dd9ahyLiuZayPg==
+          -----END CERTIFICATE-----
+  - name: "rhel1"
+    image: "rhel-10-1-04-15-26"
+    bootloader: efi
+    register_satellite: false
+    memory: "4G"
+    cores: 1
+    image_size: "40G"
+    tags:
+      - key: "AnsibleGroup"
+        value: "nodes"
+    networks:
+      - default
+    userdata: |
+      #cloud-config
+      fqdn: rhel1.lab
+      hostname: rhel1
+      prefer_fqdn_over_hostname: true
+      manage_etc_hosts: true
