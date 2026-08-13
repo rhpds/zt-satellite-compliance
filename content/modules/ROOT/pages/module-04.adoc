@@ -1,6 +1,6 @@
 :imagesdir: ../assets/images
 
-== Configure OpenSCAP Compliance
+== Ingest and Configure OpenSCAP content
 We'll need to upload the OpenSCAP content, import the OpenSCAP client Ansible role and variables, and create a tailoring file for the STIG SSHD profile. The following sections will guide you through these steps.
 
 .Upload the OpenSCAP Content
