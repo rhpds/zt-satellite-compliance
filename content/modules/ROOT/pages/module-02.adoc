@@ -1,45 +1,71 @@
 :imagesdir: ../assets/images
 
-= OpenSCAP Compliance Introduction
+= Make a content view that includes the required repositories for OpenSCAP compliance scanning
 
-In this module you will use Red Hat Satellite to run an OpenSCAP compliance scan against *rhel1.lab* and review the results.
+OpenSCAP compliance scanning requires a content view that includes the `Red Hat Satellite Client 6 for RHEL 10` repository. In this lab, all the required repositories have been synchronized. Please refer to documentation or try the Satellite Basics lab to learn how to synchronize repositories.
 
-== What is OpenSCAP?
+The `Red Hat Satellite Client 6 for RHEL 10` repository contains the OpenSCAP client required to run compliance scans.
 
-OpenSCAP is an open-source framework for managing system security compliance. It uses the Security Content Automation Protocol (SCAP) to evaluate systems against security policies and benchmarks such as CIS, DISA STIG, and PCI-DSS.
+Let's create a content view. We'll start by switching to the `Satellite Web UI`.
 
-Red Hat Satellite integrates with OpenSCAP so you can:
+.Satellite Web UI
+image::satellite-web-ui.png[]
 
-- Assign compliance policies to hosts
-- Schedule and run scans remotely
-- View compliance reports in the Satellite Web UI
-- Apply remediation to fix compliance violations
+Let's create a new content view called `RHEL10` that includes the required repositories.
 
-In Satellite, you use an XCCDF profile from SCAP content and, eventually, a tailoring file, to define a compliance policy. Satellite includes default SCAP contents from SCAP Security Guide provided by the OpenSCAP project.
+.Create a content view
+[%collapsible]
+====
+Navigate to **Content > Lifecycle > Content Views** in the Satellite Web UI and click **Create Content View**.
 
-SCAP content is a SCAP data-stream file that contains implementation of compliance, configuration, or security baselines. A single data stream usually includes multiple XCCDF profiles. An XCCDF profile defines an industry standard or custom security standard against which you can evaluate compliance of host configuration in Satellite, such as Protection Profile for General Purpose Operating Systems (OSPP), Health Insurance Portability and Accountability Act (HIPAA), and PCI-DSS v3.2.1 Control Baseline for Red Hat Enterprise Linux 9. You can adapt existing XCCDF profiles according to your requirements by using tailoring files.
+.Create Content View
+image::create-cv.png[]
 
-Satellite supports content of SCAP versions 1.2 and 1.3.
+In the **Create Content View** form, enter the following information:
 
-== Upload the OpenSCAP Content
+. Enter the name `RHEL10` in the **Name** field.
+. Check that the label `RHEL10` in populated in the **Label** field.
+. Select `Content view` in the **Type** field.
+. Click `Create content view`.
 
-The first step to configuring OpenSCAP compliance scanning is to upload the OpenSCAP content to Red Hat Satellite. The content includes the security policies and benchmarks that will be used to evaluate your systems. By loading the default SCAP contents on Satellite Server, you ensure that the data streams from the SCAP Security Guide (SSG) are loaded and assigned to all organizations and locations.
+.Create Content View form
+image::create-cv-wizard.png[]
 
-SSG is provided by the operating system of Satellite Server and installed in /usr/share/xml/scap/ssg/content/.
+====
 
-In the `satellite.lab terminal`, run the following command to upload the default SCAP contents to Satellite Server:
+After creating the content view, you'll be taken to `Repositories` menu where we'll add repositories.
 
-[source,bash,run]
-----
-hammer scap-content bulk-upload --type default
-----
+.Add repositories to the content view
+[%collapsible]
+====
+Click on the `Status` dropdown.
 
-The output should look like the following:
+.Status dropdown
+image::repositories.png[]
 
-.SCAP content upload output
-image::upload-scap-contents-cli.png[]
+Select `All`.
 
-In the `Satellite Web UI`, navigate to **Hosts > Compliance >SCAP contents** to verify that the SCAP contents have been uploaded successfully.
+.Select all
+image::repositories-dropdown-all.png[]
 
-.SCAP contents in Satellite Web UI
-image::webgui-scap-contents.png[]
+Complete the following steps:
+
+. Add the following repositories to the content view:
+  * `Red Hat Enterprise Linux 10 for x86_64 - BaseOS (RPMs)`
+  * `Red Hat Enterprise Linux 10 for x86_64 - AppStream (RPMs)`
+  * `Red Hat Satellite Client 6 for RHEL 10 (RPMs)`
+. Click **Add repositories**.
+
+Now click on `Publish new version` to publish the content view.
+
+.Publish new version
+image::publish-cv.png[]
+
+Complete the following steps:
+
+. Click on `Promote`.
+. Click `Next`
+
+Finally click `Finish` to promote the content view to the `Library` lifecycle environment.
+
+====

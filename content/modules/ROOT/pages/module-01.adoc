@@ -1,5 +1,26 @@
 :imagesdir: ../assets/images
 
+= OpenSCAP Compliance Introduction
+
+In this module you will use Red Hat Satellite to run an OpenSCAP compliance scan against *rhel1.lab* and review the results.
+
+== What is OpenSCAP?
+
+OpenSCAP is an open-source framework for managing system security compliance. It uses the Security Content Automation Protocol (SCAP) to evaluate systems against security policies and benchmarks such as CIS, DISA STIG, and PCI-DSS.
+
+Red Hat Satellite integrates with OpenSCAP so you can:
+
+- Assign compliance policies to hosts
+- Schedule and run scans remotely
+- View compliance reports in the Satellite Web UI
+- Apply remediation to fix compliance violations
+
+In Satellite, you use an XCCDF profile from SCAP content and, eventually, a tailoring file, to define a compliance policy. Satellite includes default SCAP contents from SCAP Security Guide provided by the OpenSCAP project.
+
+SCAP content is a SCAP data-stream file that contains implementation of compliance, configuration, or security baselines. A single data stream usually includes multiple XCCDF profiles. An XCCDF profile defines an industry standard or custom security standard against which you can evaluate compliance of host configuration in Satellite, such as Protection Profile for General Purpose Operating Systems (OSPP), Health Insurance Portability and Accountability Act (HIPAA), and PCI-DSS v3.2.1 Control Baseline for Red Hat Enterprise Linux 9. You can adapt existing XCCDF profiles according to your requirements by using tailoring files.
+
+Satellite supports content of SCAP versions 1.2 and 1.3.
+
 == Introduction to Red Hat Satellite 6.19 Compliance
 
 The lab environment consists of the following

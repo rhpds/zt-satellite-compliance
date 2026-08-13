@@ -1,58 +1,64 @@
 :imagesdir: ../assets/images
 
-= Configure a host group
+== Configure OpenSCAP Compliance
+We'll need to upload the OpenSCAP content, import the OpenSCAP client Ansible role and variables, and create a tailoring file for the STIG SSHD profile. The following sections will guide you through these steps.
 
-Navigate to **Configure > Host Groups ** and click on `Create Host Group`.
-
-.Create host group menu
-image::host-groups.png[]
-
-== Host group configuration procedure
-
-.Host group configuration - Host Group details
+.Upload the OpenSCAP Content
 [%collapsible]
 ====
-In the `Create Host Group` window, enter the following details:
 
-. Enter the name `RHEL10`.
-. Select `satellite.lab` as the `Content Source`.
-. Select the `Library` `Lifecycle Environment`.
-. Select the `RHEL10` `Content View`.
-. Select `satellite.lab` as the `OpenSCAP Capsule`.
-. Click on the `Ansible Roles` tab.
+The first step to configuring OpenSCAP compliance scanning is to upload the OpenSCAP content to Red Hat Satellite. The content includes the security policies and benchmarks that will be used to evaluate your systems. By loading the default SCAP contents on Satellite Server, you ensure that the data streams from the SCAP Security Guide (SSG) are loaded and assigned to all organizations and locations.
 
-.Host Group attributes
-image::create-host-group-host-group.png[]
+SSG is provided by the operating system of Satellite Server and installed in /usr/share/xml/scap/ssg/content/.
 
+In the `satellite.lab terminal`, run the following command to upload the default SCAP contents to Satellite Server:
+
+[source,bash,run]
+----
+hammer scap-content bulk-upload --type default
+----
+
+The output should look like the following:
+
+.SCAP content upload output
+image::upload-scap-contents-cli.png[]
+
+In the `Satellite Web UI`, navigate to **Hosts > Compliance >SCAP contents** to verify that the SCAP contents have been uploaded successfully.
+
+.SCAP contents in Satellite Web UI
+image::webgui-scap-contents.png[]
 ====
 
-.Host group configuration - Ansible Roles
+.Import the OpenSCAP client Ansible role and variables
 [%collapsible]
 ====
-In the `Ansible Roles` tab, enter the following details:
+The next step is to import the OpenSCAP client Ansible role and variables into Red Hat Satellite. The OpenSCAP client Ansible role is used to install and configure the OpenSCAP client on the managed hosts. The OpenSCAP client Ansible variables define the configuration settings for the OpenSCAP client, such as the location of the SCAP content and the compliance policies to be applied.
 
-. select the `theforeman.foreman_scap_client` role.
-. Click on the `Activation Keys` tab.
-
-.theforeman.foreman_scap_client role
-image::theforeman-openscap-client-role.png[]
+[source,bash,run]
+----
+hammer ansible roles import --proxy-id 1 --role-names theforeman.foreman_scap_client
+hammer ansible variables import --proxy-id 1
+----
 
 ====
 
-.Host group configuration - Activation Keys
+.Import the STIG sshd tailoring file
 [%collapsible]
 ====
-In the `Activation Keys` tab, enter the following details:
+The final step is to import the STIG sshd tailoring file into Red Hat Satellite. The tailoring file is an XML file that defines the specific configuration settings for the STIG sshd profile.
 
-. Select the `RHEL10` activation key.
-. Click `Save` to create the host group.
+Tailoring files are used to customize the compliance policies defined in the SCAP content. They allow you to modify the default settings of the XCCDF profiles to meet your organization's specific security requirements.
 
-.Activation Keys tab
-image::host-group-activation-keys.png[]
+In particular, this tailoring file will prohibit the use of empty passwords, which is a common security requirement in many organizations.
 
+The tailoring file was pre-created and downloaded to the `/tmp` directory on the Satellite server. The creation of tailoring files is a non-trivial task and is outside the scope of this lab. For more information on creating tailoring files, see the [OpenSCAP documentation](https://www.open-scap.org/resources/documentation/).
+
+[source,bash,run]
+----
+hammer tailoring-file create \
+    --name "STIG SSHD Tailoring file" \
+    --scap-file /tmp/rhel10-stig-sshd-tailoring.xml\
+    --organizations "Acme Org" \
+    --locations "Vancouver"
+----
 ====
-
-Your host group is now configured.
-
-.Host group configuration complete
-image::host-group-configured.png[]

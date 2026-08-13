@@ -1,31 +1,58 @@
 :imagesdir: ../assets/images
 
-= Create an activation key to provide access to the required content view
+= Configure a host group
 
-In this module, you will create an activation key to provide access to the content view that includes the required repositories for OpenSCAP compliance scanning completed in the previous module.
+Navigate to **Configure > Host Groups ** and click on `Create Host Group`.
 
-== Create an activation key
+.Create host group menu
+image::host-groups.png[]
 
-Navigate to **Content > Lifecycle > Activation Keys** in the Satellite Web UI and click **Create Activation Key**.
+== Host group configuration procedure
 
-.Activation key menu
-image::activation-keys-menu.png[]
+.Host group configuration - Host Group details
+[%collapsible]
+====
+In the `Create Host Group` window, enter the following details:
 
-In the `New Activation Key` form, enter the following information:
+. Enter the name `RHEL10`.
+. Select `satellite.lab` as the `Content Source`.
+. Select the `Library` `Lifecycle Environment`.
+. Select the `RHEL10` `Content View`.
+. Select `satellite.lab` as the `OpenSCAP Capsule`.
+. Click on the `Ansible Roles` tab.
 
-. Enter the name `RHEL10` in the **Name** field.
-. Click on `Assign content view environments`.
+.Host Group attributes
+image::create-host-group-host-group.png[]
 
-.Activation key form
-image::new-activation-key.png[]
+====
 
-In the `Assign content view environments` form, select the following:
+.Host group configuration - Ansible Roles
+[%collapsible]
+====
+In the `Ansible Roles` tab, enter the following details:
 
-. Select `RHEL10` in the **Content view** field.
-. Click `Save`
+. select the `theforeman.foreman_scap_client` role.
+. Click on the `Activation Keys` tab.
 
-.Assign content view environments form
-image::assign-cv.png[]
+.theforeman.foreman_scap_client role
+image::theforeman-openscap-client-role.png[]
 
-Click **Save** to create the activation key.
+====
 
+.Host group configuration - Activation Keys
+[%collapsible]
+====
+In the `Activation Keys` tab, enter the following details:
+
+. Select the `RHEL10` activation key.
+. Click `Save` to create the host group.
+
+.Activation Keys tab
+image::host-group-activation-keys.png[]
+
+====
+
+Your host group is now configured.
+
+.Host group configuration complete
+image::host-group-configured.png[]

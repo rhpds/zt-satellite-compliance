@@ -8,7 +8,7 @@ antora:
       label: "Introduction"
       solveButton: true
     - name: module-02
-      label: "OpenSCAP Compliance Scanning"
+      label: "Module 02"
       solveButton: true
     - name: module-03
       label: "Module 03"
@@ -17,7 +17,10 @@ antora:
       label: "Module 04"
       solveButton: true
     - name: module-05
-      label: "Module 05"
+      label: "OpenSCAP Compliance Scanning"
+      solveButton: true
+    - name: module-06
+      label: "Module 06"
       solveButton: true
 
 tabs:

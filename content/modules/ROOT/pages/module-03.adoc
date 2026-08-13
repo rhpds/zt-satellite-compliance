@@ -1,71 +1,31 @@
 :imagesdir: ../assets/images
 
-= Make a content view that includes the required repositories for OpenSCAP compliance scanning
+= Create an activation key to provide access to the required content view
 
-OpenSCAP compliance scanning requires a content view that includes the `Red Hat Satellite Client 6 for RHEL 10` repository. In this lab, all the required repositories have been synchronized. Please refer to documentation or try the Satellite Basics lab to learn how to synchronize repositories.
+In this module, you will create an activation key to provide access to the content view that includes the required repositories for OpenSCAP compliance scanning completed in the previous module.
 
-The `Red Hat Satellite Client 6 for RHEL 10` repository contains the OpenSCAP client required to run compliance scans.
+== Create an activation key
 
-Let's create a content view. We'll start by switching to the `Satellite Web UI`.
+Navigate to **Content > Lifecycle > Activation Keys** in the Satellite Web UI and click **Create Activation Key**.
 
-.Satellite Web UI
-image::satellite-web-ui.png[]
+.Activation key menu
+image::activation-keys-menu.png[]
 
-Let's create a new content view called `RHEL10` that includes the required repositories.
-
-.Create a content view
-[%collapsible]
-====
-Navigate to **Content > Lifecycle > Content Views** in the Satellite Web UI and click **Create Content View**.
-
-.Create Content View
-image::create-cv.png[]
-
-In the **Create Content View** form, enter the following information:
+In the `New Activation Key` form, enter the following information:
 
 . Enter the name `RHEL10` in the **Name** field.
-. Check that the label `RHEL10` in populated in the **Label** field.
-. Select `Content view` in the **Type** field.
-. Click `Create content view`.
+. Click on `Assign content view environments`.
 
-.Create Content View form
-image::create-cv-wizard.png[]
+.Activation key form
+image::new-activation-key.png[]
 
-====
+In the `Assign content view environments` form, select the following:
 
-After creating the content view, you'll be taken to `Repositories` menu where we'll add repositories.
+. Select `RHEL10` in the **Content view** field.
+. Click `Save`
 
-.Add repositories to the content view
-[%collapsible]
-====
-Click on the `Status` dropdown.
+.Assign content view environments form
+image::assign-cv.png[]
 
-.Status dropdown
-image::repositories.png[]
+Click **Save** to create the activation key.
 
-Select `All`.
-
-.Select all
-image::repositories-dropdown-all.png[]
-
-Complete the following steps:
-
-. Add the following repositories to the content view:
-  * `Red Hat Enterprise Linux 10 for x86_64 - BaseOS (RPMs)`
-  * `Red Hat Enterprise Linux 10 for x86_64 - AppStream (RPMs)`
-  * `Red Hat Satellite Client 6 for RHEL 10 (RPMs)`
-. Click **Add repositories**.
-
-Now click on `Publish new version` to publish the content view.
-
-.Publish new version
-image::publish-cv.png[]
-
-Complete the following steps:
-
-. Click on `Promote`.
-. Click `Next`
-
-Finally click `Finish` to promote the content view to the `Library` lifecycle environment.
-
-====
