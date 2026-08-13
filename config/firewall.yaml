@@ -8,3 +8,8 @@ egress:
       - podSelector:
           matchLabels:
             kubevirt.io: virt-launcher
+ingress:
+  - from:
+      - podSelector:
+          matchLabels:
+            kubevirt.io: virt-launcher

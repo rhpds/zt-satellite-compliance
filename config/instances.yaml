@@ -1,11 +1,4 @@
 ---
-litemaas:
-  models:
-    - minimax-m2
-  duration: 1d
-  enable_user_info_messages: true
-  enable_user_info_data: true
-
 virtualmachines:
   - name: "satellite"
     image: "satellite-server-rhdp-1-6-19-04-09-26-v2"
