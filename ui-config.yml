@@ -14,10 +14,10 @@ antora:
       label: "Module 03"
       solveButton: true
     - name: module-04
-      label: "Module 04"
+      label: "OpenSCAP Compliance Scanning"
       solveButton: true
     - name: module-05
-      label: "OpenSCAP Compliance Scanning"
+      label: "Module 05"
       solveButton: true
     - name: module-06
       label: "Module 06"
