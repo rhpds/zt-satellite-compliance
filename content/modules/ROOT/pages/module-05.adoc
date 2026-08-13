@@ -7,4 +7,52 @@ Navigate to **Configure > Host Groups ** and click on `Create Host Group`.
 .Create host group menu
 image::host-groups.png[]
 
+== Host group configuration procedure
 
+.Host group configuration - Host Group details
+[%collapsible]
+====
+In the `Create Host Group` window, enter the following details:
+
+. Enter the name `RHEL10`.
+. Select `satellite.lab` as the `Content Source`.
+. Select the `Library` `Lifecycle Environment`.
+. Select the `RHEL10` `Content View`.
+. Select `satellite.lab` as the `OpenSCAP Capsule`.
+. Click on the `Ansible Roles` tab.
+
+.Host Group attributes
+image::create-host-group-host-group.png[]
+
+====
+
+.Host group configuration - Ansible Roles
+[%collapsible]
+====
+In the `Ansible Roles` tab, enter the following details:
+
+. select the `theforeman.foreman_scap_client` role.
+. Click on the `Activation Keys` tab.
+
+.theforeman.foreman_scap_client role
+image::theforeman-openscap-client-role.png[]
+
+====
+
+.Host group configuration - Activation Keys
+[%collapsible]
+====
+In the `Activation Keys` tab, enter the following details:
+
+. Select the `RHEL10` activation key.
+. Click `Save` to create the host group.
+
+.Activation Keys tab
+image::host-group-activation-keys.png[]
+
+====
+
+Your host group is now configured.
+
+.Host group configuration complete
+image::host-group-configured.png[]
