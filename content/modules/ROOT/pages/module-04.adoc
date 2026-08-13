@@ -2,6 +2,10 @@
 
 = Configure a host group
 
+Host groups are a way to create a standardized configuration for a group of hosts. Host groups allow you to define common settings, such as content views, lifecycle environments, and Ansible roles, that can be applied to multiple hosts. This simplifies the management of hosts and ensures consistency across your infrastructure.
+
+In this particular lab, we'll create a host group that enables the OpenSCAP client to be installed on the managed hosts. The host group will be configured with the necessary content view, lifecycle environment, and Ansible role to ensure that the OpenSCAP client is properly set up for compliance scanning.
+
 Navigate to **Configure > Host Groups ** and click on `Create Host Group`.
 
 .Create host group menu

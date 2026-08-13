@@ -27,7 +27,7 @@ hammer content-view add-repository \
   --name "RHEL10" \
   --organization "$ORG" \
   --product "Red Hat Enterprise Linux for x86_64" \
-  --repository "Red Hat Satellite Client 6 for RHEL 10 RPMs x86_64"
+  --repository "Red Hat Satellite Client 6 for RHEL 10 x86_64 RPMs"
 
 # Publish the content view
 hammer content-view publish \

@@ -4,7 +4,9 @@
 
 In this module, you will create an activation key to provide access to the content view that includes the required repositories for OpenSCAP compliance scanning completed in the previous module.
 
-== Create an activation key
+.Create an activation key
+[%collapsible]
+====
 
 Navigate to **Content > Lifecycle > Activation Keys** in the Satellite Web UI and click **Create Activation Key**.
 
@@ -28,4 +30,32 @@ In the `Assign content view environments` form, select the following:
 image::assign-cv.png[]
 
 Click **Save** to create the activation key.
+====
 
+.Enable the Satellite Client repository for the activation key
+[%collapsible]
+====
+By default, the `Red Hat Satellite Client 6 for RHEL 10` repository is not enabled for the activation key. You will need to enable this repository so that the OpenSCAP client can be installed on the managed hosts.
+
+Navigate to **Content > Lifecycle > Activation Keys** in the Satellite Web UI. Click on the `RHEL10` activation key to edit it.
+
+.Activation key menu
+image::activation-keys-menu-rhel10.png[]
+
+Click on the `Repository Sets` tab.
+
+.Repository Sets tab
+image::repository-sets-tab.png[]
+
+In the `Repository Sets` menu, do the following:
+
+. Select the `Red Hat Satellite Client 6 for RHEL 10 x86_64 (RPMs)` radio button.
+. Click the `Select Action` dropdown and select `Override to Enabled` option.
+
+The `Red Hat Satellite Client 6 for RHEL 10` repository is now enabled for the activation key.
+
+.Enabled repository
+image::enabled-repo.png[]
+
+After registering a host with the `RHEL10` activation key, the `Red Hat Satellite Client 6 for RHEL 10` repository will be available on the host and the OpenSCAP client can be installed using the `theforeman.foreman_scap_client` Ansible role.
+====
