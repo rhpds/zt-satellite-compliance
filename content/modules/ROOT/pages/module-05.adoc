@@ -1,6 +1,6 @@
 :imagesdir: ../assets/images
 
-= Configure a host group
+== Configure a host group
 
 Host groups are a way to create a standardized configuration for a group of hosts. Host groups allow you to define common settings, such as content views, lifecycle environments, and Ansible roles, that can be applied to multiple hosts. This simplifies the management of hosts and ensures consistency across your infrastructure.
 

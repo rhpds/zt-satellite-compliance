@@ -1,8 +1,120 @@
 :imagesdir: ../assets/images
 
-= Module 06
+== Create a compliance policy
 
-[source,bash,run]
-----
+Navigate to **Hosts > Compliance > Policies** in the Satellite Web UI and click **New Policy**.
 
-----
+.New Policy menu
+image::compliance-policies-menu.png[]
+
+== Configure the compliance policy
+
+.Deployment Options tab
+[%collapsible]
+=====
+In the `Deployment Options` tab, select the following:
+
+. Select `Ansible`.
+. Click `Next`.
+
+.Deployment Options tab
+image::policies-deployment-options.png[]
+=====
+
+.Policy Attributes tab
+[%collapsible]
+=====
+In the `Policy Attributes` tab, enter the following information:
+
+. In the `Name` field, enter `DISA STIG no empty passwords ssh`.
+. Click `Next`.
+
+.Policy Attributes tab
+image::policies-policy-attributes.png[]
+=====
+
+.SCAP Content tab
+[%collapsible]
+=====
+In the `SCAP Content` tab, select the following:
+
+. In the `SCAP Content` field, select `Red Hat RHEL10 default content`.
+. In the `XCCDF Profile` field, select `Red Hat STIG for Red Hat Enterprise Linux 10`.
+. In the `Tailoring File` field, select `STIG SSHD Tailoring file`.
+. In the `XCCDF Profile in Tailoring File` field, select `DISA STIG for RHEL10 No Empty Passwords`.
+. Click `Next`.
+
+.SCAP Content tab
+image::policies-scap-content.png[]
+
+[NOTE]
+====
+*Red Hat STIG vs DISA STIG*
+
+Red Hat STIG is authored by Red Hat and provides STIG-style hardening based on DISA's requirements, but tailored to how RHEL actually works. It's available immediately in the scap-security-guide package and is what you see in Satellite as profiles like `xccdf_org.ssgproject.content_profile_stig`.
+
+DISA STIG is the official benchmark published by the Defense Information Systems Agency. It goes through a formal approval process and is published on DISA's STIG website. It's the authoritative source required for DoD compliance.
+
+Key differences:
+
+- *Timing* — Red Hat's STIG is available at or near OS release; DISA's official STIG can lag months behind while going through the approval process.
+- *Authority* — For DoD/government compliance audits, the DISA STIG is the one auditors check against. Red Hat's version is a close approximation but not the officially signed-off document.
+- *Content* — They're largely aligned since Red Hat works with DISA during development, but there can be minor differences in rule implementation, check logic, or remediation steps.
+
+In practice, most organizations use the Red Hat STIG profile from scap-security-guide (which is what's in your Satellite) for automated scanning, since it maps to the same controls and is kept in sync with DISA's requirements.
+====
+=====
+
+.Schedule tab
+[%collapsible]
+=====
+In the `Schedule` tab, select the following:
+
+. Select `Weekly`.
+. Select `Sunday`.
+. Click `Next`.
+
+.Schedule tab
+image::policies-schedule.png[]
+=====
+
+.Locations tab
+[%collapsible]
+=====
+
+The default location `Vancouver` is already selected. Click `Next`.
+
+.Locations tab
+image::policies-locations.png[]
+=====
+
+.Organizations tab
+[%collapsible]
+=====
+
+The default organization `Acme Org` is already selected. Click `Next`.
+
+.Organizations tab
+image::policies-organizations.png[]
+=====
+
+.Hostgroups tab
+[%collapsible]
+=====
+
+Finally, in the `Hostgroups` tab, select the following:
+
+. Select the `RHEL10` host group.
+. Click `Submit`.
+
+.Hostgroups tab
+image::policies-hostgroups.png[]
+
+=====
+
+The resulting compliance policy is now created and ready to be used for scanning hosts in the `RHEL10` host group.
+
+.Compliance policy created
+image::compliance-policy-completed.png[]
+
+In the next module we'll register a host to the RHEL10 host group.

@@ -1,6 +1,6 @@
 :imagesdir: ../assets/images
 
-= OpenSCAP Compliance Introduction
+== OpenSCAP Compliance Introduction
 
 In this module you will use Red Hat Satellite to run an OpenSCAP compliance scan against *rhel1.lab* and review the results.
 

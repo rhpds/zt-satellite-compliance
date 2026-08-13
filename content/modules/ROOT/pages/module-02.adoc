@@ -1,6 +1,6 @@
 :imagesdir: ../assets/images
 
-= Make a content view that includes the required repositories for OpenSCAP compliance scanning
+== Make a content view that includes the required repositories for OpenSCAP compliance scanning
 
 OpenSCAP compliance scanning requires a content view that includes the `Red Hat Satellite Client 6 for RHEL 10` repository. In this lab, all the required repositories have been synchronized. Please refer to documentation or try the Satellite Basics lab to learn how to synchronize repositories.
 
