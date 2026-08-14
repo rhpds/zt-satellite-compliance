@@ -4,7 +4,7 @@
 
 In this module, you will register *rhel1.lab* to the Satellite server using the `RHEL10` host group. This will automatically assign the content view, activation key, and OpenSCAP Ansible role to the host.
 
-== Generate the host registration command
+== Generate the host registration command and register the host
 
 In the `satellite.lab terminal` tab run the following command to generate the host registration command and register the host *rhel1.lab* to the Satellite server:
 
