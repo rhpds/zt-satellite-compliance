@@ -20,6 +20,7 @@
       ansible_python_interpreter: /usr/libexec/platform-python
     loop:
       - rhel1
+      - rhel2
 
 - name: Demo Playbook for the ansible-runner API
   hosts: all:!localhost

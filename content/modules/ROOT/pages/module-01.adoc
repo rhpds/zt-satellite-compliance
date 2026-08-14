@@ -2,7 +2,7 @@
 
 == OpenSCAP Compliance Introduction
 
-In this module you will use Red Hat Satellite to run an OpenSCAP compliance scan against *rhel1.lab* and review the results.
+In this module you will use Red Hat Satellite to run an OpenSCAP compliance scan against *rhel1.lab* and *rhel2.lab* and review the results.
 
 == What is OpenSCAP?
 
@@ -26,10 +26,22 @@ Satellite supports content of SCAP versions 1.2 and 1.3.
 The lab environment consists of the following
 
 - Red Hat Satellite 6.19.0 Server (Satellite is preinstalled and content/software is synchronized.)
-- Red Hat Enterprise Linux hosts.
+- Two Red Hat Enterprise Linux hosts, *rhel1.lab* and *rhel2.lab*.
 
 .Lab topology
 image::satellite-compliance-environment.png[../assets/satellite-compliance-environment]
+
+Over the course of this lab, you will:
+
+. *Log in* to the Satellite Web UI.
+. *Create a content view* that includes the repositories required for OpenSCAP compliance scanning.
+. *Create an activation key* to provide hosts access to that content view.
+. *Ingest and configure OpenSCAP content*, including the default SCAP content, the OpenSCAP client Ansible role, and a tailoring file.
+. *Configure a host group* that ties together the content view, activation key, and OpenSCAP Ansible role.
+. *Create a compliance policy* that defines which SCAP profile and tailoring file to scan against, and on what schedule.
+. *Register* *rhel1.lab* and *rhel2.lab* to Satellite using the host group.
+. *Install the OpenSCAP client* on the managed hosts by running the Ansible role.
+. *Run an OpenSCAP scan*, review the compliance report, and remediate any issues found.
 
 == Log into the Web UI
 

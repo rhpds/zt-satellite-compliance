@@ -90,3 +90,21 @@ virtualmachines:
       hostname: rhel1
       prefer_fqdn_over_hostname: true
       manage_etc_hosts: true
+  - name: "rhel2"
+    image: "rhel-10-1-04-15-26"
+    bootloader: efi
+    register_satellite: false
+    memory: "4G"
+    cores: 1
+    image_size: "40G"
+    tags:
+      - key: "AnsibleGroup"
+        value: "nodes"
+    networks:
+      - default
+    userdata: |
+      #cloud-config
+      fqdn: rhel2.lab
+      hostname: rhel2
+      prefer_fqdn_over_hostname: true
+      manage_etc_hosts: true
