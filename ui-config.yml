@@ -28,6 +28,9 @@ antora:
     - name: module-08
       label: "Module 08"
       solveButton: true
+    - name: module-09
+      label: "Module 09"
+      solveButton: true
 
 tabs:
   - name: "Satellite Web UI"

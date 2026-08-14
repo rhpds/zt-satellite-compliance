@@ -1,0 +1,52 @@
+:imagesdir: ../assets/images
+
+== Run an OpenSCAP scan on a host
+
+.Run an OpenSCAP scan on a host
+[%collapsible]
+=====
+Navigate to ** Hosts > All Hosts** and click on `rhel1.lab`.
+
+.Hosts menu
+image::scan-select-rhel1.png[]
+
+Next, click on the `Schedule a job` button and select `Run OpenSCAP scan`.
+
+.Run OpenSCAP scan
+image::scan-run-openscap-scan.png[]
+
+=====
+
+.Check the status of the job
+[%collapsible]
+=====
+
+To check the status of the ansible job, click on **Monitor > Jobs**.
+
+.Jobs menu
+image::monitor-jobs.png[]
+
+Click on `Run ansible roles`.
+
+.Run ansible roles
+image::run-scan-openscap.png[]
+
+Click on rhe accordion button next to `rhel1` to view the details of the job.
+
+.Job details
+image::run-scan-openscap-status.png[]
+
+=====
+
+.View the compliance report
+[%collapsible]
+=====
+
+To view the compliance report, click on **Hosts > Compliance > Reports**.
+
+.Compliance reports
+image::menu-compliance-reports.png[]
+
+
+
+=====
