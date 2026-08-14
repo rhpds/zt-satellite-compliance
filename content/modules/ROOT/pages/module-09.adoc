@@ -47,6 +47,69 @@ To view the compliance report, click on **Hosts > Compliance > Reports**.
 .Compliance reports
 image::menu-compliance-reports.png[]
 
+Click on the `Reported At` field.
 
+.Reported At field
+image::compliance-report.png[]
+
+You'll see the compliance report for the host.
+
+.Compliance report
+image::compliance-report-rhel1.png[]
+
+The tailoring file used to customize the OpenSCAP scan specifies that the host should not permit empty passwords. This report shows that the host has a compliance issue with this rule. As well, you can see that the scan only looks at this one rule. If we did not apply a tailoring file, the scan would look at all the rules in the benchmark.
 
 =====
+
+.Remediate the compliance issues
+[%collapsible]
+=====
+
+To remediate the compliance issues, in the `Actions` column, click on the `Hosts failing this rule` button and select `Remediation`.
+
+.Remediate
+image::remediate-compliance.png[]
+
+In the `Disable SSH Access vis Empty Passwords` form, do the following:
+
+. Check that `Remote job` is selected.
+. In the `Snippet` drop down, select `Ansible`.
+. Click next.
+
+.Disable SSH Access vis Empty Passwords
+image::disable-ssh-select-snippet.png[]
+
+Click through to the `Review remediation` menu, review the changes and click on the `Run` button.
+
+.Review remediation
+image::review-remediation.png[]
+
+On the next menu, click on the `Job details` button.
+
+.Job details
+image::job-details.png[]
+
+You can review the details of the job and the output of the job.
+
+.Job details
+image::remediation-details.png[]
+
+=====
+
+The lab is now complete.
+
+Optionally, you can run another OpenSCAP scan to verify that the compliance issues have been remediated.
+
+For more information on OpenSCAP, see the following links:
+
+* https://www.open-scap.org/
+* https://www.open-scap.org/documentation/
+
+For more information on Red Hat Satellite, visit this link:
+
+* https://www.redhat.com/en/technologies/management/satellite
+
+For the Satellite Basics lab, visit this link:
+
+* https://developers.redhat.com/content-gateway/link/3890426
+
