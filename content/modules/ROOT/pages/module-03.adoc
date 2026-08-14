@@ -4,6 +4,8 @@
 
 In this module, you will create an activation key to provide access to the content view that includes the required repositories for OpenSCAP compliance scanning completed in the previous module.
 
+We'll start by creating an activation key to provide access to the content view that includes the required repositories for OpenSCAP compliance scanning.
+
 .Create an activation key
 [%collapsible]
 ====
@@ -31,6 +33,8 @@ image::assign-cv.png[]
 
 Click **Save** to create the activation key.
 ====
+
+Next, we'll enable the `Red Hat Satellite Client 6 for RHEL 10` repository for the activation key.
 
 .Enable the Satellite Client repository for the activation key
 [%collapsible]

@@ -3,6 +3,8 @@
 == Ingest and Configure OpenSCAP content
 We'll need to upload the OpenSCAP content, import the OpenSCAP client Ansible role and variables, and create a tailoring file for the STIG SSHD profile. The following sections will guide you through these steps.
 
+We'll start by uploading the OpenSCAP content to the Satellite server.
+
 .Upload the OpenSCAP Content
 [%collapsible]
 ====
@@ -29,6 +31,8 @@ In the `Satellite Web UI`, navigate to **Hosts > Compliance >SCAP contents** to 
 image::webgui-scap-contents.png[]
 ====
 
+Next, we'll import the OpenSCAP client Ansible role and variables into the Satellite server.
+
 .Import the OpenSCAP client Ansible role and variables
 [%collapsible]
 ====
@@ -42,14 +46,16 @@ hammer ansible variables import --proxy-id 1
 
 ====
 
+Next, we'll import the STIG sshd tailoring file into the Satellite server.
+
 .Import the STIG sshd tailoring file
 [%collapsible]
 ====
 The final step is to import the STIG sshd tailoring file into Red Hat Satellite. The tailoring file is an XML file that defines the specific configuration settings for the STIG sshd profile.
 
-Tailoring files are used to customize the compliance policies defined in the SCAP content. They allow you to modify the default settings of the XCCDF profiles to meet your organization's specific security requirements.
+Tailoring files are used to customize the compliance policies defined in the SCAP content. They allow you to modify the default settings of the XCCDF profiles to meet your organization's specific security requirements. Generally, complete policies without tailoring files will render the system non-compliant and it may be laborious or impossible to completely remediate the system to compliance.
 
-In particular, this tailoring file will prohibit the use of empty passwords, which is a common security requirement in many organizations.
+In particular, this tailoring file will prohibit the use of empty passwords, which is a common security requirement in many organizations. No other rules are included in this tailoring file.
 
 The tailoring file was pre-created and downloaded to the `/tmp` directory on the Satellite server. The creation of tailoring files is a non-trivial task and is outside the scope of this lab. For more information on creating tailoring files, see the [OpenSCAP documentation](https://www.open-scap.org/resources/documentation/).
 

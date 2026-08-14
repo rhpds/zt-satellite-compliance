@@ -17,6 +17,8 @@ For more information about the theforeman.foreman_scap_client Ansible role, see 
 
 * https://access.redhat.com/documentation/en-us/red_hat_satellite/6.15/html/deploying_compliance_policies/index[Deploying Compliance Policies - Red Hat Satellite 6.15]
 
+Next, we'll run the Ansible role on the managed hosts to install and configure the OpenSCAP client.
+
 .Run the Ansible role on the managed hosts
 [%collapsible]
 =====
@@ -31,6 +33,8 @@ Do the following:
 .Run Ansible roles
 image::run-ansible-roles.png[]
 =====
+
+Next, we'll check the status of the job.
 
 .Check the status of the job
 [%collapsible]

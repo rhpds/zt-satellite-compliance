@@ -2,6 +2,7 @@
 
 == Run an OpenSCAP scan on a host
 
+
 .Run an OpenSCAP scan on a host
 [%collapsible]
 =====
