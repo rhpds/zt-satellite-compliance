@@ -5,3 +5,19 @@
 code {
   background-color: #ddd;
 }
+
+/* [%collapsible] blocks render as <details class="details"> */
+.details {
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.details > .title {
+  font-weight: 600;
+}
+
+.details > .content {
+  margin-top: 0.5rem;
+}
