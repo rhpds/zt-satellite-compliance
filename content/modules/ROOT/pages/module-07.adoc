@@ -35,3 +35,6 @@ These commands will take a few minutes to complete.
 == Verify the registration
 
 In the `Satellite Web UI`, navigate to **Hosts > All Hosts** and verify that both *rhel1.lab* and *rhel2.lab* appear in the host list with the `RHEL10` host group assigned.
+
+.Registered hosts
+image::hosts-registered.png[]
