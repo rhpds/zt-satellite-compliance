@@ -11,6 +11,9 @@ Let's create a content view. We'll start by switching to the `Satellite Web UI`.
 .Satellite Web UI
 image::satellite-web-ui.png[]
 
+
+
+=====
 Let's create a new content view called `RHEL10` that includes the required repositories.
 
 .Create a content view
@@ -32,7 +35,9 @@ In the **Create Content View** form, enter the following information:
 image::create-cv-wizard.png[]
 
 ====
+=====
 
+=====
 After creating the content view, you'll be taken to `Repositories` menu where we'll add repositories.
 
 .Add repositories to the content view
@@ -69,3 +74,4 @@ Complete the following steps:
 Finally click `Finish` to promote the content view to the `Library` lifecycle environment.
 
 ====
+=====

@@ -17,13 +17,14 @@ For more information about the theforeman.foreman_scap_client Ansible role, see 
 
 * https://access.redhat.com/documentation/en-us/red_hat_satellite/6.15/html/deploying_compliance_policies/index[Deploying Compliance Policies - Red Hat Satellite 6.15]
 
+=====
 Next, we'll run the Ansible role on the managed hosts to install and configure the OpenSCAP client.
 
 NOTE: The ansible role `theforeman.foreman_scap_client` is automatically scheduled to run on the managed hosts that are registered to the `RHEL10` host group. The purpose of this module is to show you how to manually run the ansible role on the managed hosts, should you choose not to wait for the automatic schedule. The scheduled job will run roughly 5 minutes after the hosts are registered. Ansible roles are idempotent, which means that they can be run multiple times without causing problems.
 
 .Run the Ansible role on the managed hosts
 [%collapsible]
-=====
+====
 
 Navigate to **Hosts > All Hosts**.
 
@@ -34,13 +35,15 @@ Do the following:
 
 .Run Ansible roles
 image::run-ansible-roles.png[]
+====
 =====
 
+=====
 Next, we'll check the status of the job.
 
 .Check the status of the job
 [%collapsible]
-=====
+====
 
 To check the status of the ansible job, click on **Monitor > Jobs**.
 
@@ -57,4 +60,5 @@ Click on rhe accordion button next to `rhel1` to view the details of the job.
 .Job details
 image::run-ansible-roles-status.png[]
 
+====
 =====

@@ -3,6 +3,7 @@
 == Ingest and Configure OpenSCAP content
 We'll need to upload the OpenSCAP content, import the OpenSCAP client Ansible role and variables, and create a tailoring file for the STIG SSHD profile. The following sections will guide you through these steps.
 
+=====
 We'll start by uploading the OpenSCAP content to the Satellite server.
 
 .Upload the OpenSCAP Content
@@ -30,7 +31,9 @@ In the `Satellite Web UI`, navigate to **Hosts > Compliance >SCAP contents** to 
 .SCAP contents in Satellite Web UI
 image::webgui-scap-contents.png[]
 ====
+=====
 
+=====
 Next, we'll import the OpenSCAP client Ansible role and variables into the Satellite server.
 
 .Import the OpenSCAP client Ansible role and variables
@@ -45,7 +48,9 @@ hammer ansible variables import --proxy-id 1
 ----
 
 ====
+=====
 
+=====
 Next, we'll import the STIG sshd tailoring file into the Satellite server.
 
 .Import the STIG sshd tailoring file
@@ -68,3 +73,4 @@ hammer tailoring-file create \
     --locations "Vancouver"
 ----
 ====
+=====

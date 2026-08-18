@@ -9,11 +9,12 @@ image::compliance-policies-menu.png[]
 
 == Configure the compliance policy
 
+=====
 Next, we'll configure the deployment options for the compliance policy.
 
 .Deployment Options tab
 [%collapsible]
-=====
+====
 In the `Deployment Options` tab, select the following:
 
 . Select `Ansible`.
@@ -21,13 +22,15 @@ In the `Deployment Options` tab, select the following:
 
 .Deployment Options tab
 image::policies-deployment-options.png[]
+====
 =====
 
+=====
 Next, we'll configure the policy attributes for the compliance policy.
 
 .Policy Attributes tab
 [%collapsible]
-=====
+====
 In the `Policy Attributes` tab, enter the following information:
 
 . In the `Name` field, enter `DISA STIG no empty passwords ssh`.
@@ -35,8 +38,10 @@ In the `Policy Attributes` tab, enter the following information:
 
 .Policy Attributes tab
 image::policies-policy-attributes.png[]
+====
 =====
 
+======
 Next, we'll configure the SCAP content for the compliance policy.
 
 .SCAP Content tab
@@ -69,13 +74,14 @@ Here are the key differences between the Red Hat STIG and the DISA STIG:
 
 In practice, most organizations use the Red Hat STIG profile from scap-security-guide (which is what's in your Satellite) for automated scanning, since it maps to the same controls and is kept in sync with DISA's requirements.
 ====
-=====
+======
 
+=====
 Next, we'll configure the schedule for the compliance policy.
 
 .Schedule tab
 [%collapsible]
-=====
+====
 In the `Schedule` tab, select the following:
 
 . Select `Weekly`.
@@ -84,37 +90,43 @@ In the `Schedule` tab, select the following:
 
 .Schedule tab
 image::policies-schedule.png[]
+====
 =====
 
+=====
 Next, we'll configure the locations for the compliance policy.
 
 .Locations tab
 [%collapsible]
-=====
+====
 
 The default location `Vancouver` is already selected. Click `Next`.
 
 .Locations tab
 image::policies-locations.png[]
+====
 =====
 
+=====
 Now we'll configure the organizations.
 
 .Organizations tab
 [%collapsible]
-=====
+====
 
 The default organization `Acme Org` is already selected. Click `Next`.
 
 .Organizations tab
 image::policies-organizations.png[]
+====
 =====
 
+=====
 Next, we'll configure the host groups for the compliance policy.
 
 .Hostgroups tab
 [%collapsible]
-=====
+====
 
 In the `Hostgroups` tab, select the following:
 
@@ -124,11 +136,14 @@ In the `Hostgroups` tab, select the following:
 .Hostgroups tab
 image::policies-hostgroups.png[]
 
+====
 =====
 
+====
 The resulting compliance policy is now created and ready to be used for scanning hosts in the `RHEL10` host group.
 
 .Compliance policy created
 image::compliance-policy-completed.png[]
 
 In the next module we'll register a host to the RHEL10 host group.
+====
