@@ -2,8 +2,12 @@
    ui.supplemental_files. Keep this file additive/minimal so future bundle
    upgrades don't require reconciling large diffs. */
 
+/* The bundle styles inline code with the selector `.doc p code`, which is
+   more specific than a bare `code` rule, so `!important` is used here to
+   reliably win regardless of where the code span appears (paragraphs, list
+   items, table cells, admonitions, etc). */
 code {
-  background-color: #ddd;
+  background-color: #ddd !important;
 }
 
 /* [%collapsible] blocks render as <details class="details"> */
