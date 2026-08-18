@@ -21,6 +21,19 @@ ssh root@rhel1.lab bash -c "$SAT_HOST_REGISTRATION_SCRIPT"
 ssh root@rhel2.lab bash -c "$SAT_HOST_REGISTRATION_SCRIPT"
 ----
 
+To register `rhel1.lab` and `rhel2.lab` to the Satellite server, run the following commands in the `satellite.lab terminal` tab:
+[source,bash,run]
+----
+ssh root@rhel1.lab bash -c "$SAT_HOST_REGISTRATION_SCRIPT"
+----
+
+[source,bash,run]
+----
+ssh root@rhel2.lab bash -c "$SAT_HOST_REGISTRATION_SCRIPT"
+----
+
+These commands will take a few minutes to complete.
+
 == Verify the registration
 
 In the `Satellite Web UI`, navigate to **Hosts > All Hosts** and verify that both *rhel1.lab* and *rhel2.lab* appear in the host list with the `RHEL10` host group assigned.
