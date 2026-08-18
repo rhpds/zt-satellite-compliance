@@ -17,8 +17,6 @@ SAT_HOST_REGISTRATION_SCRIPT=$(hammer host-registration generate-command \
   --setup-insights true \
   --setup-remote-execution true)
 
-ssh root@rhel1.lab bash -c "$SAT_HOST_REGISTRATION_SCRIPT"
-ssh root@rhel2.lab bash -c "$SAT_HOST_REGISTRATION_SCRIPT"
 ----
 
 To register `rhel1.lab` and `rhel2.lab` to the Satellite server, run the following commands in the `satellite.lab terminal` tab:
