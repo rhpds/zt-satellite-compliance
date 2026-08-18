@@ -1,0 +1,7 @@
+/* Custom overrides layered on top of the nookbag-bundle UI via Antora's
+   ui.supplemental_files. Keep this file additive/minimal so future bundle
+   upgrades don't require reconciling large diffs. */
+
+code {
+  background-color: #ddd;
+}
