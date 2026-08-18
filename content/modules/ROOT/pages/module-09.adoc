@@ -2,14 +2,17 @@
 
 == Run an OpenSCAP scan on a host
 
+Now we will run an OpenSCAP scan on both `rhel1.lab` and `rhel2.lab`.
+
+Do the following to run an OpenSCAP scan on both `rhel1.lab` and `rhel2.lab`.
 
 .Run an OpenSCAP scan on a host
 [%collapsible]
 =====
-Navigate to ** Hosts > All Hosts** and click on `rhel1.lab`.
+Navigate to ** Hosts > All Hosts** and click on `rhel1.lab` and `rhel2.lab`.
 
 .Hosts menu
-image::scan-select-rhel1.png[]
+image::scan-select-rhel1-rhel2.png[]
 
 Next, click on the `Schedule a job` button and select `Run OpenSCAP scan`.
 
@@ -17,6 +20,8 @@ Next, click on the `Schedule a job` button and select `Run OpenSCAP scan`.
 image::scan-run-openscap-scan.png[]
 
 =====
+
+Let's check the status of the job.
 
 .Check the status of the job
 [%collapsible]
@@ -30,14 +35,16 @@ image::monitor-jobs.png[]
 Click on `Run ansible roles`.
 
 .Run ansible roles
-image::run-scan-openscap.png[]
+image::run-scan-openscap2.png[]
 
-Click on rhe accordion button next to `rhel1` to view the details of the job.
+Click on rhe accordion button next to `rhel1` and `rhel2` to view the details of the job.
 
 .Job details
-image::run-scan-openscap-status.png[]
+image::run-scan-openscap-status2.png[]
 
 =====
+
+We can now view the compliance report for both `rhel1.lab` and `rhel2.lab`.
 
 .View the compliance report
 [%collapsible]
@@ -61,6 +68,8 @@ image::compliance-report-rhel1.png[]
 The tailoring file used to customize the OpenSCAP scan specifies that the host should not permit empty passwords. This report shows that the host has a compliance issue with this rule. As well, you can see that the scan only looks at this one rule. If we did not apply a tailoring file, the scan would look at all the rules in the benchmark.
 
 =====
+
+We'll remediate the compliance issue on `rhel1.lab`.
 
 .Remediate the compliance issues
 [%collapsible]
