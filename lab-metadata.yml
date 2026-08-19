@@ -1,4 +1,3 @@
-
 lab:
   name: "Red Hat Satellite Compliance"
   shortname: "zt-satellite-compliance"
@@ -14,5 +13,4 @@ lab:
     time_to_complete: "45"
 
   git_ref:
-    production: "v0.0.1"
-    development: "dev"
+    development: "main"
