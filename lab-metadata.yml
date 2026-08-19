@@ -13,4 +13,5 @@ lab:
     time_to_complete: "45"
 
   git_ref:
+    production: "main"
     development: "main"
