@@ -19,11 +19,16 @@ SAT_HOST_REGISTRATION_SCRIPT=$(hammer host-registration generate-command \
 
 ----
 
-To register `rhel1.lab` and `rhel2.lab` to the Satellite server, run the following commands in the `satellite.lab terminal` tab:
+To register `rhel1.lab` and `rhel2.lab` to the Satellite server, run the following commands in the `satellite.lab terminal` tab.
+
+Run the command for `rhel1.lab`:
+
 [source,bash,run]
 ----
 ssh root@rhel1.lab bash -c "$SAT_HOST_REGISTRATION_SCRIPT"
 ----
+
+Run the same command for `rhel2.lab`:
 
 [source,bash,run]
 ----

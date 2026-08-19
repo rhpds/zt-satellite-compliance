@@ -35,6 +35,9 @@ Do the following:
 
 .Run Ansible roles
 image::run-ansible-roles.png[]
+
+While it's not necessary, feel free to run the ansible role on `rhel2.lab` if desired.
+
 ====
 =====
 
