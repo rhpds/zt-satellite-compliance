@@ -15,7 +15,7 @@ Navigate to ** Hosts > All Hosts** and click on `rhel1.lab` and `rhel2.lab`.
 .Hosts menu
 image::scan-select-rhel1-rhel2.png[]
 
-Next, click on the `Schedule a job` button and select `Run OpenSCAP scan`.
+Next, click on the accordion button next to the `Schedule a job` button and select `Run OpenSCAP scan`.
 
 .Run OpenSCAP scan
 image::scan-run-openscap-scan.png[]

@@ -32,7 +32,7 @@ Navigate to **Hosts > All Hosts**.
 Do the following:
 
 . Click on `rhel1.lab`.
-. Click on `Schedule a job` and select `Run Ansible roles`.
+. Click on the accordion button next to `Schedule a job` and select `Run Ansible roles`.
 
 .Run Ansible roles
 image::run-ansible-roles.png[]
@@ -59,7 +59,7 @@ Click on `Run ansible roles`.
 .Run ansible roles
 image::run-ansible-roles-job.png[]
 
-Click on rhe accordion button next to `rhel1` to view the details of the job.
+Click on the accordion button next to `rhel1` to view the details of the job.
 
 .Job details
 image::run-ansible-roles-status.png[]
