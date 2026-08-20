@@ -35,7 +35,7 @@ To check the status of the ansible job, click on **Monitor > Jobs**.
 .Jobs menu
 image::monitor-jobs.png[]
 
-Click on `Run ansible roles`.
+Click on `Run scan for all openscap policies on host`.
 
 .Run ansible roles
 image::run-scan-openscap2.png[]
