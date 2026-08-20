@@ -6,9 +6,10 @@ Recall that we configured the `RHEL10` host group to include the `theforeman.for
 
 The theforeman.foreman_scap_client Ansible role does three things:
 
-Installs the rubygem-foreman_scap_client package on the host (from the Satellite Client repo)
-Configures /etc/foreman_scap_client/config.yaml with the Satellite proxy connection details and the compliance policies assigned to the host
-Creates a cron job that schedules SCAP scans and automatically uploads the compliance reports (ARF files) back to Satellite
+Installs the rubygem-foreman_scap_client package on the host (from the Satellite Client repo). +
+Configures /etc/foreman_scap_client/config.yaml with the Satellite proxy connection details and the compliance policies assigned to the host. +
+Creates a cron job that schedules SCAP scans and automatically uploads the compliance reports (ARF files) back to Satellite.
+
 When Satellite runs this role on a host, it automatically injects the correct values for the proxy server, port, and policy details — so the host knows which SCAP profiles to scan against and where to send the results.
 
 For more information about the theforeman.foreman_scap_client Ansible role, see the following resources:
