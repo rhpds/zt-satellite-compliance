@@ -6,16 +6,17 @@ Recall that we configured the `RHEL10` host group to include the `theforeman.for
 
 The theforeman.foreman_scap_client Ansible role does three things:
 
-Installs the rubygem-foreman_scap_client package on the host (from the Satellite Client repo)
-Configures /etc/foreman_scap_client/config.yaml with the Satellite proxy connection details and the compliance policies assigned to the host
-Creates a cron job that schedules SCAP scans and automatically uploads the compliance reports (ARF files) back to Satellite
+Installs the rubygem-foreman_scap_client package on the host (from the Satellite Client repo). +
+Configures /etc/foreman_scap_client/config.yaml with the Satellite proxy connection details and the compliance policies assigned to the host. +
+Creates a cron job that schedules SCAP scans and automatically uploads the compliance reports (ARF files) back to Satellite.
+
 When Satellite runs this role on a host, it automatically injects the correct values for the proxy server, port, and policy details — so the host knows which SCAP profiles to scan against and where to send the results.
 
 For more information about the theforeman.foreman_scap_client Ansible role, see the following resources:
 
 * https://github.com/theforeman/ansible-foreman_scap_client[theforeman/ansible-foreman_scap_client on GitHub]
 
-* https://access.redhat.com/documentation/en-us/red_hat_satellite/6.15/html/deploying_compliance_policies/index[Deploying Compliance Policies - Red Hat Satellite 6.15]
+* https://docs.redhat.com/en/documentation/red_hat_satellite/6.19/html/managing_security_compliance/deploying-compliance-policies_security-compliance[Deploying Compliance Policies - Red Hat Satellite 6.19]
 
 =====
 Next, we'll run the Ansible role on the managed hosts to install and configure the OpenSCAP client.
@@ -31,7 +32,7 @@ Navigate to **Hosts > All Hosts**.
 Do the following:
 
 . Click on `rhel1.lab`.
-. Click on `Schedule a job` and select `Run Ansible roles`.
+. Click on the accordion button next to `Schedule a job` and select `Run Ansible roles`.
 
 .Run Ansible roles
 image::run-ansible-roles.png[]
@@ -58,7 +59,7 @@ Click on `Run ansible roles`.
 .Run ansible roles
 image::run-ansible-roles-job.png[]
 
-Click on rhe accordion button next to `rhel1` to view the details of the job.
+Click on the accordion button next to `rhel1` to view the details of the job.
 
 .Job details
 image::run-ansible-roles-status.png[]
