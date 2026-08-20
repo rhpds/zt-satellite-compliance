@@ -496,6 +496,57 @@ Quotes for engagement or humor
 ____
 ```
 
+### Collapsible Sections in Module Content
+
+**Basic collapsible block (no nesting):**
+
+```asciidoc
+.Title of the collapsible step
+[%collapsible]
+====
+Step content, instructions, images, etc.
+====
+```
+
+**Wrapping a collapsible with narrative text (a common pattern in this lab):** when a collapsible step is preceded by its own intro sentence and you want to group them as one visual unit, wrap both in an outer delimited block one level larger than the collapsible's own delimiter:
+
+```asciidoc
+=====
+Narrative text introducing this step.
+
+.Title of the collapsible step
+[%collapsible]
+====
+Step content here.
+====
+=====
+```
+
+**Nesting a `[NOTE]`, `[TIP]`, etc. inside a collapsible:** AsciiDoc requires each nesting level to use a different delimiter length. If a collapsible's content includes another delimited block (like `[NOTE]`), bump the collapsible's own delimiter up one level (to `=====`), and bump any outer wrapper up another level (to `======`):
+
+```asciidoc
+======
+Narrative text introducing this step.
+
+.Title of the collapsible step
+[%collapsible]
+=====
+Step content here.
+
+[NOTE]
+====
+Callout content.
+====
+=====
+======
+```
+
+**Key points:**
+- The innermost delimited block always uses `====` (4 equals signs).
+- Each level of nesting outward adds one more equals sign (`=====`, `======`, etc.).
+- Always close blocks in reverse order of opening (innermost first).
+- Forgetting to bump the delimiter length when nesting is a common source of broken rendering — the inner block's closing delimiter gets matched to the wrong opening block.
+
 ### Real-World Context and Personas
 
 When creating labs that need real-world context and scenarios, use these standard fictitious elements:
