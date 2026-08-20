@@ -15,7 +15,7 @@ Navigate to ** Hosts > All Hosts** and click on `rhel1.lab` and `rhel2.lab`.
 .Hosts menu
 image::scan-select-rhel1-rhel2.png[]
 
-Next, click on the `Schedule a job` button and select `Run OpenSCAP scan`.
+Next, click on the accordion button next to the `Schedule a job` button and select `Run OpenSCAP scan`.
 
 .Run OpenSCAP scan
 image::scan-run-openscap-scan.png[]
@@ -35,7 +35,7 @@ To check the status of the ansible job, click on **Monitor > Jobs**.
 .Jobs menu
 image::monitor-jobs.png[]
 
-Click on `Run ansible roles`.
+Click on `Run scan for all openscap policies on host`.
 
 .Run ansible roles
 image::run-scan-openscap2.png[]
@@ -83,7 +83,7 @@ We'll remediate the compliance issue on `rhel1.lab`.
 ====
 
 
-To remediate the compliance issues, in the `Actions` column, click on the `Hosts failing this rule` button and select `Remediation`.
+To remediate the compliance issues, in the `Actions` column, click on the accordion button next to the `Hosts failing this rule` button and select `Remediation`.
 
 .Remediate
 image::remediate-compliance.png[]

@@ -62,7 +62,7 @@ Next, we'll configure the activation key to be used to install the OpenSCAP clie
 In the `Activation Keys` tab, enter the following details:
 
 . Select the `RHEL10` activation key.
-. Click `Save` to create the host group.
+. Click `Submit` to create the host group.
 
 .Activation Keys tab
 image::host-group-activation-keys.png[]

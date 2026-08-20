@@ -26,7 +26,7 @@ The output should look like the following:
 .SCAP content upload output
 image::upload-scap-contents-cli.png[]
 
-In the `Satellite Web UI`, navigate to **Hosts > Compliance >SCAP contents** to verify that the SCAP contents have been uploaded successfully.
+In the `Satellite Web UI`, navigate to **Hosts > Compliance > SCAP contents** to verify that the SCAP contents have been uploaded successfully.
 
 .SCAP contents in Satellite Web UI
 image::webgui-scap-contents.png[]
@@ -62,7 +62,7 @@ Tailoring files are used to customize the compliance policies defined in the SCA
 
 In particular, this tailoring file will prohibit the use of empty passwords, which is a common security requirement in many organizations. No other rules are included in this tailoring file.
 
-The tailoring file was pre-created and downloaded to the `/tmp` directory on the Satellite server. The creation of tailoring files is a non-trivial task and is outside the scope of this lab. For more information on creating tailoring files, see the [OpenSCAP documentation](https://www.open-scap.org/resources/documentation/).
+The tailoring file was pre-created and downloaded to the `/tmp` directory on the Satellite server. The creation of tailoring files is a non-trivial task and is outside the scope of this lab. For more information on creating tailoring files, see the https://www.open-scap.org/resources/documentation/[OpenSCAP documentation].
 
 [source,bash,run]
 ----
