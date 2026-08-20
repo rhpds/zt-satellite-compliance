@@ -83,7 +83,7 @@ We'll remediate the compliance issue on `rhel1.lab`.
 ====
 
 
-To remediate the compliance issues, in the `Actions` column, click on the `Hosts failing this rule` button and select `Remediation`.
+To remediate the compliance issues, in the `Actions` column, click on the accordion button next to the `Hosts failing this rule` button and select `Remediation`.
 
 .Remediate
 image::remediate-compliance.png[]
